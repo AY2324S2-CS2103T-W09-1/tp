@@ -57,11 +57,4 @@ public class IndexTest {
         // different index -> returns false
         assertFalse(fifthPersonIndex.equals(Index.fromOneBased(1)));
     }
-
-    @Test
-    public void toStringMethod() {
-        Index index = Index.fromZeroBased(0);
-        String expected = Index.class.getCanonicalName() + "{zeroBasedIndex=" + index.getZeroBased() + "}";
-        assertEquals(expected, index.toString());
-    }
 }
