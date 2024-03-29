@@ -57,7 +57,7 @@ public class BookedCleaning implements Comparable<BookedCleaning> {
         Matcher matcher = PATTERN_BOOKED_DATE_AND_TIME.matcher(bookedDateAndTime);
         return matcher.matches();
     }
-    
+
     public static LocalDate retrieveDate(String bookedDateAndTime) {
         Matcher matcher = PATTERN_BOOKED_DATE_AND_TIME.matcher(bookedDateAndTime);
         String dateString = matcher.group(1);
@@ -66,6 +66,7 @@ public class BookedCleaning implements Comparable<BookedCleaning> {
     }
 
     public static String retrieveTime(String bookedDateAndTime) {
+        assert bookedDateAndTime == null : "Booked date and time should not be null";
         Matcher matcher = PATTERN_BOOKED_DATE_AND_TIME.matcher(bookedDateAndTime);
         String dateString = matcher.group(2);
         return dateString;
